@@ -1,49 +1,46 @@
-# SDEV 245 - Authentication and Role-Based Access Control
-# Author: Joel Cooper
+# SDEV 245 - Role-Based Access Control Demo
 
-# Store usernames, passwords, and roles
+# Hardcoded users and their roles
 users = {
-    "JCooperAdmin": {
-        "password": "Test1234*",
-        "role": "admin"
-    },
-    "JCooperUser": {
-        "password": "1234*Test",
-        "role": "user"
-    }
+    "JCooperAdmin": "admin",
+    "JCooperUser": "user"
 }
 
-print("====================================")
-print("       User Login System")
-print("====================================")
+# Simulated login
+# Change this username to test each user
+username = "JCooperUser"
 
-# Ask the user for login information
-username = input("Enter username: ")
-password = input("Enter password: ")
+print("Role-Based Access Control Demo")
+print("--------------------------------")
 
-# Check if the username exists
+# Authentication check
 if username in users:
+    role = users[username]
 
-    # Check if the password is correct
-    if password == users[username]["password"]:
+    print("Login successful.")
+    print(f"Username: {username}")
+    print(f"Role: {role}")
+    print()
 
-        role = users[username]["role"]
-
-        print("\nLogin successful!")
-        print(f"Welcome, {username}.")
-        print(f"Role: {role}")
-
-        # Role-Based Access Control
-        if role == "admin":
-            print("\nAdmin Area: Access granted.")
-            print("User Area: Access granted.")
-
-        elif role == "user":
-            print("\nAdmin Area: Access denied.")
-            print("User Area: Access granted.")
-
+    # Protected admin action
+    if role == "admin":
+        print("Admin Area: Access granted.")
     else:
-        print("\nERROR: Incorrect password.")
+        print("Admin Area: Access denied.")
+
+    # Protected user action
+    if role == "user":
+        print("User Area: Access granted.")
+    else:
+        print("User Area: Access denied.")
 
 else:
-    print("\nERROR: Username not found.")
+    print("Login failed. User was not found.")
+
+
+##  CIA Triad - Confidentiality
+#
+# This application demonstrates confidentiality by restricting access
+# based on the user's assigned role. An admin can access the admin area,
+# while a regular user is denied access and vice versa. 
+# This helps prevent unauthorized users from accessing protected resources.
