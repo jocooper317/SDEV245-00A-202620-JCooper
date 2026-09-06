@@ -17,7 +17,7 @@ users = {
 
 # Simulated login
 # Change this username to test each user
-username = "JCooperUser"
+username = "JCooper"
 
 print("SDEV 245 Security Demo")
 print("--------------------------------")
