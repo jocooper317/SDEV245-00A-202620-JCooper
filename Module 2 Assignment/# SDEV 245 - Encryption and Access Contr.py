@@ -17,7 +17,9 @@ users = {
 
 # Simulated login
 # Change this username to test each user
-username = "JCooper"
+username = "UnknownUser" 
+# Change to "JCooperAdmin" to test admin access
+# Change to "UnknownUser" to test failed login
 
 print("SDEV 245 Security Demo")
 print("--------------------------------")
