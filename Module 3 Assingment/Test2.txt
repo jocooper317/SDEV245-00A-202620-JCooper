@@ -1,1 +1,1 @@
-This is to test my SDEV 245 - Module 3 Assignment - Secure Hashing and Encryption. 
+This is to test my SDEV 245 - Module 3 Assignment - Secure Hashing and Encryption! 
